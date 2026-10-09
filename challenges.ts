@@ -1,0 +1,156 @@
+import type { Challenge, Badge } from '@/types';
+
+export const badges: Badge[] = [
+  {
+    id: 'badge-workout-warrior',
+    name: 'Workout Warrior',
+    description: 'Complete 14 workout sessions',
+    icon: 'Flame',
+    color: '#ef4444',
+  },
+  {
+    id: 'badge-hydration-hero',
+    name: 'Hydration Hero',
+    description: 'Drink 8 glasses of water for 7 consecutive days',
+    icon: 'Droplets',
+    color: '#3b82f6',
+  },
+  {
+    id: 'badge-healthy-eater',
+    name: 'Healthy Eater',
+    description: 'Log meals for 7 consecutive days',
+    icon: 'Utensils',
+    color: '#22c55e',
+  },
+  {
+    id: 'badge-strength-builder',
+    name: 'Strength Builder',
+    description: 'Complete the 30-Day Strength Challenge',
+    icon: 'Dumbbell',
+    color: '#f59e0b',
+  },
+  {
+    id: 'badge-consistency-champion',
+    name: 'Consistency Champion',
+    description: 'Maintain a 21-day streak on any challenge',
+    icon: 'Trophy',
+    color: '#8b5cf6',
+  },
+];
+
+export const challenges: Challenge[] = [
+  {
+    id: 'ch-7-water',
+    name: '7-Day Water Challenge',
+    description: 'Drink 8 glasses of water every day for 7 days to build a healthy hydration habit.',
+    image: 'https://images.pexels.com/photos/1385184/pexels-photo-1385184.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    duration: 7,
+    difficulty: 'Beginner',
+    dailyTasks: [
+      'Drink 8 glasses of water',
+      'Start your day with a glass of water',
+      'Carry a water bottle everywhere',
+      'Replace one sugary drink with water',
+      'Track your water intake',
+      'Add lemon or mint for flavor',
+      'End the day hydrated',
+    ],
+    badgeId: 'badge-hydration-hero',
+  },
+  {
+    id: 'ch-7-breakfast',
+    name: '7-Day Healthy Breakfast Challenge',
+    description: 'Start each morning with a nutritious breakfast to fuel your day right.',
+    image: 'https://images.pexels.com/photos/11394968/pexels-photo-11394968.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    duration: 7,
+    difficulty: 'Beginner',
+    dailyTasks: [
+      'Eat a balanced breakfast',
+      'Include protein in your breakfast',
+      'Add fresh fruits',
+      'Avoid sugary cereals',
+      'Try a new healthy recipe',
+      'Stay hydrated with breakfast',
+      'Plan tomorrow\'s breakfast',
+    ],
+    badgeId: 'badge-healthy-eater',
+  },
+  {
+    id: 'ch-14-workout',
+    name: '14-Day Workout Challenge',
+    description: 'Commit to exercising daily for 14 days. Build a consistent fitness routine.',
+    image: 'https://images.pexels.com/photos/3888405/pexels-photo-3888405.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    duration: 14,
+    difficulty: 'Intermediate',
+    dailyTasks: [
+      'Complete a 20-minute workout',
+      'Try a new exercise',
+      'Focus on form',
+      'Add 5 extra minutes',
+      'Try a cardio session',
+      'Strength training day',
+      'Active recovery day',
+      'Full body workout',
+      'Cardio intervals',
+      'Core and abs',
+      'Upper body focus',
+      'Lower body focus',
+      'Full body burn',
+      'Final challenge workout',
+    ],
+    badgeId: 'badge-workout-warrior',
+  },
+  {
+    id: 'ch-21-fitness',
+    name: '21-Day Fitness Challenge',
+    description: 'Three weeks of daily fitness to transform your habits and see real results.',
+    image: 'https://images.pexels.com/photos/4162491/pexels-photo-4162491.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    duration: 21,
+    difficulty: 'Advanced',
+    dailyTasks: Array.from({ length: 21 }, (_, i) => `Day ${i + 1}: Complete your daily fitness routine and push your limits!`),
+    badgeId: 'badge-consistency-champion',
+  },
+  {
+    id: 'ch-30-strength',
+    name: '30-Day Strength Challenge',
+    description: 'Build serious strength over 30 days with progressive overload training.',
+    image: 'https://images.pexels.com/photos/7289370/pexels-photo-7289370.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    duration: 30,
+    difficulty: 'Advanced',
+    dailyTasks: Array.from({ length: 30 }, (_, i) => `Day ${i + 1}: Strength training session with progressive overload`),
+    badgeId: 'badge-strength-builder',
+  },
+  {
+    id: 'ch-sleep',
+    name: 'Healthy Sleep Challenge',
+    description: 'Prioritize quality sleep for 14 days. Improve your recovery and overall health.',
+    image: 'https://images.pexels.com/photos/6753354/pexels-photo-6753354.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    duration: 14,
+    difficulty: 'Beginner',
+    dailyTasks: [
+      'Sleep before 10 PM',
+      'No screens 1 hour before bed',
+      'Sleep 7-9 hours',
+      'Create a bedtime routine',
+      'Keep your room dark and cool',
+      'Avoid caffeine after 2 PM',
+      'Track your sleep quality',
+      'Try meditation before sleep',
+      'Maintain a consistent schedule',
+      'Limit evening meals',
+      'Read instead of scrolling',
+      'Use a sleep mask',
+      'Reflect on your week',
+      'Celebrate your new habit',
+    ],
+    badgeId: 'badge-consistency-champion',
+  },
+];
+
+export function getChallengeById(id: string): Challenge | undefined {
+  return challenges.find((c) => c.id === id);
+}
+
+export function getBadgeById(id: string): Badge | undefined {
+  return badges.find((b) => b.id === id);
+}
